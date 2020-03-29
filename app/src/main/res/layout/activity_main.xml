@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1176AE"
+    tools:context=".MainActivity">
+    <include layout="@layout/tool_bar"/>
+
+    <RelativeLayout
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/back"/>
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+
+        android:layout_marginTop="30dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+
+        android:layout_marginTop="15dp"
+
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:textColor="#1176AE"
+        android:textSize="18sp"
+        android:background="#fff"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+
+
+        android:layout_height="wrap_content"
+        android:text="Log in" />
+
+    <TextView
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Or create new account" />
+
+
+</LinearLayout>
