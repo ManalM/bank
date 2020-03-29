@@ -14,7 +14,7 @@ public class Profile extends AppCompatActivity {
     String[] data;
     TextView name, email, job, money, logout;
     Button but;
-
+    String email1, name1, job1, pass,cash;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,11 +37,16 @@ public class Profile extends AppCompatActivity {
 
         //-------------------------------------------
         data = getIntent().getStringArrayExtra("Data");
+        email1 =data[0];
+        name1 = data[1];
+        job1=data[2];
+        cash =data[3];
+        pass =data[4];
         if (data != null) {
-            name.setText("your name is:\t" + data[1]);
-            money.setText("your balance is:\t" + data[3] + "$");
-            job.setText("your job is:\t" + data[2]);
-            email.setText("your email is:\t" + data[0]);
+            name.setText("your name is:\t" + name1);
+            money.setText("your balance is:\t" + cash + "$");
+            job.setText("your job is:\t" + job1);
+            email.setText("your email is:\t" + email1);
 
 
         } else {
@@ -64,11 +69,11 @@ public class Profile extends AppCompatActivity {
 
     public void addMoney(View view) {
         Intent intent = new Intent(Profile.this, AddMoney.class);
-        intent.putExtra("email", data[0]);
-        intent.putExtra("name", data[1]);
-        intent.putExtra("job", data[2]);
-        intent.putExtra("money", data[3]);
-        intent.putExtra("pass", data[4]);
+        intent.putExtra("email", email1);
+        intent.putExtra("name", name1);
+        intent.putExtra("job", job1);
+        intent.putExtra("money", cash);
+        intent.putExtra("pass", pass);
 
         startActivity(intent);
     }

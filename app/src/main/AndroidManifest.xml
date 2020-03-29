@@ -13,6 +13,7 @@
         <activity android:name=".Profile" />
         <activity android:name=".Register" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,5 +21,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

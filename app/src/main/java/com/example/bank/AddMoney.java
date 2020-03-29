@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.example.bank.App.CHANNEL_1_ID;
+
 public class AddMoney extends AppCompatActivity {
     String email, name, job, pass;
     DBAdapter adapter;
@@ -32,6 +34,14 @@ public class AddMoney extends AppCompatActivity {
 
         toolbar.setTitle("");
         toolbarText.setText("Add Money");
+//----------------------------------------
+        adapter = new DBAdapter(this);
+
+        email = getIntent().getStringExtra("email");
+        job = getIntent().getStringExtra("job");
+        pass = getIntent().getStringExtra("pass");
+
+        name = getIntent().getStringExtra("name");
 //-----------init------
         add = findViewById(R.id.add_amount);
         amount = findViewById(R.id.amount);
@@ -42,23 +52,22 @@ public class AddMoney extends AppCompatActivity {
                 add(view);
             }
         });
+        notificationManager = NotificationManagerCompat.from(this);
+
     }
 
     public void add(View view) {
-        email = getIntent().getStringExtra("email");
-        job = getIntent().getStringExtra("job");
-        pass = getIntent().getStringExtra("pass");
 
-        name = getIntent().getStringExtra("name");
         String cash = amount.getText().toString();
         if (cash.isEmpty()) {
             Toast.makeText(this, "Enter the values for all fields", Toast.LENGTH_SHORT).show();
         } else {
             md.start();
-            adapter.updateData(email, name, pass, job, cash);
+            //todo:not showing notification
+           adapter.updateData(email, name, pass, cash, job);
 
             sendNotification(view);
-            viewData(view);
+           viewData(view);
 
         }
     }
@@ -71,16 +80,16 @@ public class AddMoney extends AppCompatActivity {
     }
     public void sendNotification(View V){
 
-        notificationManager= NotificationManagerCompat.from(this);
-        Notification notification= new NotificationCompat.Builder(this,App.Chanel_1_ID)
+
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("Your money added")
-                .setContentText("your balance added successfully")
+                .setContentTitle("your money added")
+                .setContentText("Your balance has been added successfully")
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
-        notificationManager.notify(1,notification);
 
+        notificationManager.notify(1, notification);
     }
 
 }

@@ -14,7 +14,7 @@
         android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginBotton="15dp"
+        android:layout_marginBottom="5dp"
 
         android:background="@drawable/back" />
 
@@ -22,7 +22,7 @@
         android:id="@+id/register_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
 
         android:ems="10"
         android:hint="Enter your Email"
@@ -32,7 +32,7 @@
         android:id="@+id/register_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
         android:ems="10"
 
         android:hint="Enter your Password"
@@ -44,7 +44,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
         android:ems="10"
 
         android:hint="Confirm your Password"
@@ -55,7 +55,7 @@
         android:id="@+id/register_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
 
         android:ems="10"
         android:hint="Enter your Name" />
@@ -64,7 +64,7 @@
         android:id="@+id/register_job"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
 
         android:ems="10"
         android:hint="Enter your Job" />
