@@ -55,8 +55,6 @@ public class DBAdapter {
     }
 
     public String[] getData(String mail) {
-        //  final String SQL_SELECT_QUERY = "SELECT * FROM "+ TABLE_USER+" WHERE "+ COLUMN_USER_EMAIL+ "= +"mail;
-
         db = myhelper.getReadableDatabase();
         String[] columns = {
 
