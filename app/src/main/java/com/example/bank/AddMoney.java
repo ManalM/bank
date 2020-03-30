@@ -68,7 +68,6 @@ public class AddMoney extends AppCompatActivity {
             Toast.makeText(this, "Enter the values for all fields", Toast.LENGTH_SHORT).show();
         } else {
             md.start();
-            //todo:not showing notification
             adapter.updateData(email, name, pass, cash, job);
 
             sendNotification(view);
